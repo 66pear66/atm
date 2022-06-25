@@ -51,11 +51,10 @@ void signUpC()
 	{
 		tail->next=newNodeP;
 		tail=newNodeP;
-	}
-	
+	}	
 	printf("创建成功!\n");
-	
 }
+
 void signUpE()
 {
 	//申请一块堆内存空间，将其地址赋值给指针newNodeP
@@ -89,11 +88,8 @@ void signUpE()
 		tail->next=newNodeP;
 		tail=newNodeP;
 	}
-	
 	printf("Created successfully!\n");
-	
 }
-
 
 //找到返回1，否则返回0 
 int findAccount(Account a)
@@ -145,7 +141,6 @@ void updatePasswordE()
 	}
 }
 
-
 void saveMoneyC()
 {
 	printf("请输入存款金额：");
@@ -175,9 +170,9 @@ void saveMoneyE()
 	else
 	{
 		printf("the amount does not match,so the deposit cannot be made");
-	}
-	
+	}	
 }
+
 void drawMoneyC()
 {
 	printf("请输入取款金额：");
@@ -186,14 +181,12 @@ void drawMoneyC()
 	if(money<=curAccount->money&&money%100==0)
 	{
 		printf("取款成功！\n");
-		curAccount->money-=money;
-		
+		curAccount->money-=money;	
 	}
 	else
 	{
 		printf("余额不足!取款失败\n");
-	}
-	
+	}	
 }
 void drawMoneyE()
 {
@@ -203,14 +196,12 @@ void drawMoneyE()
 	if(money<=curAccount->money&&money%100==0)
 	{
 		printf("withdrawal successful！\n");
-		curAccount->money-=money;
-		
+		curAccount->money-=money;	
 	}
 	else
 	{
 		printf("wiyhdrawal failed due to insufficient balance\n");
-	}
-	
+	}	
 }
 
 Account *otherAccount=NULL;
@@ -235,13 +226,11 @@ void transferC()
 	scanf("%s",otherusername);
 	if(findotherAccount(otherusername))
 	{
-		
 		printf("请输入转账金额：");
 		int money;
 		scanf("%d",&money);
 		if(money<=curAccount->money&&money%100==0)
 		{
-			
 			curAccount->money-=money;
 			otherAccount->money+=money;
 			printf("转账成功");
@@ -250,8 +239,7 @@ void transferC()
 		{
 			printf("余额不足，无法转账！");
 		}
-	}
-	
+	}	
 	else
 	{
 		printf("账户错误！");
@@ -265,13 +253,11 @@ void transferE()
 	scanf("%s",otherusername);
 	if(findotherAccount(otherusername))
 	{
-		
 		printf("please enter the transfer amount：");
 		int money;
 		scanf("%d",&money);
 		if(money<=curAccount->money&&money%100==0)
-		{
-			
+		{			
 			curAccount->money-=money;
 			otherAccount->money+=money;
 			printf("transfer succeeded!");
@@ -280,8 +266,7 @@ void transferE()
 		{
 			printf("Insufficient balance，unable to transfer！");
 		}
-	}
-	
+	}	
 	else
 	{
 		printf("Account error！");
@@ -291,8 +276,19 @@ void transferE()
 void homePageC()
 {
 	system("cls");
-	printf("请选择服务：");
-	printf("按1修改密码，按2存款，按3取款，按4转账");
+	printf("\n#################################################################################\n");
+    printf("\n▓                               * 欢迎使用  *                                 ▓\n");
+    printf("\n#################################################################################\n");
+	printf("\n          ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆\n");	
+	printf("          |◆|******|◆|        ☆ 修改密码       请按 1        |◆|******|◆|\n"); 
+	printf("          |◆|******|◆|        ☆ 存款业务       请按 2        |◆|******|◆|\n");
+	printf("          |◆|******|◆|        ☆ 取款业务       请按 3        |◆|******|◆|\n"); 
+	printf("          |◆|******|◆|        ☆ 转账业务       请按 4        |◆|******|◆|\n");
+	printf("          ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆\n");
+    printf("\n#################################################################################\n");
+    printf("\n▓                          *******************************                    ▓\n");
+    printf("\n#################################################################################\n");
+	printf("\n\n\t\t##请输入你的选择：");
 	int gn;
 	scanf("%d",&gn);
 	if(gn==1)
@@ -320,8 +316,19 @@ void homePageC()
 void homePageE()
 {
 	system("cls");
-	printf("please select a service：");
-	printf("press 1 to change the password，deposit by 2，withdraw by 3，transfer by 4");
+	printf("\n#################################################################################\n");
+    printf("\n▓                               *  welcome  *                                 ▓\n");
+    printf("\n#################################################################################\n");
+	printf("\n          ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆\n");	
+	printf("          |◆|******|◆|        ☆ change the password     1        |◆|******|◆|\n"); 
+	printf("          |◆|******|◆|        ☆ deposit by        input 2        |◆|******|◆|\n");
+	printf("          |◆|******|◆|        ☆ withdraw by       input 3        |◆|******|◆|\n"); 
+	printf("          |◆|******|◆|        ☆ transfer by       input 4        |◆|******|◆|\n");
+	printf("          ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆\n");
+    printf("\n#################################################################################\n");
+    printf("\n▓                          *******************************                    ▓\n");
+    printf("\n#################################################################################\n");
+	printf("\n\n\t\t##input your option：");
 	int gn;
 	scanf("%d",&gn);
 	if(gn==1)
@@ -345,6 +352,7 @@ void homePageE()
 		printf("Input error");
 	}
 }
+
 void signInC()
 {
 	for(int i=0;i<3;i++)
@@ -369,6 +377,7 @@ void signInC()
 		}
 	} 
 }
+
 void signInE()
 {
 	int i;
@@ -393,10 +402,11 @@ void signInE()
 	}
 }
 
-/**
+/*
 如果数据加载成功返回1
 否则返回0 
 */
+
 int loadData()
 {
 	FILE* fp=fopen("D:/atm.txt","r");
@@ -431,6 +441,7 @@ int loadData()
 	}
 	fclose(fp);
 }
+
 void saveData()
 {
 	FILE* fp=fopen("D:/atm.txt","w");
@@ -445,11 +456,17 @@ void saveData()
 	}
 }
 
-
 void showMenuC()
 {
-	printf("开户，按1\n");
-	printf("登录，按2\n");
+	system("cls");
+	printf("\n#################################################################################\n");
+	printf("\n          ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆\n");
+	printf("          |◆|******|◆|                                     |◆|******|◆|\n");
+	printf("          |◆|******|◆|       ☆ 开户        请按 1         |◆|******|◆|\n"); 
+	printf("          |◆|******|◆|       ☆ 登录        请按 2         |◆|******|◆|\n");
+	printf("          |◆|******|◆|                                     |◆|******|◆|\n");
+	printf("          ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆\n");
+	printf("\n#################################################################################\n");
 	int n;
 	scanf("%d",&n);
 	
@@ -458,13 +475,9 @@ void showMenuC()
 		signUpC();
 	}
 	else if(n==2)
-	{
-		
+	{		
 		signInC();
-	}
-	
-	
-	
+	}	
 	else
 	{
 		printf("输入错误！");
@@ -473,8 +486,14 @@ void showMenuC()
 
 void showMenuE()
 {
-	printf("signUp，input 1\n");
-	printf("signIn，input 2\n");
+	printf("\n#################################################################################\n");
+	printf("\n          ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆\n");
+	printf("          |◆|******|◆|                                     |◆|******|◆|\n");
+	printf("          |◆|******|◆|       ☆ signUp      input 1        |◆|******|◆|\n"); 
+	printf("          |◆|******|◆|       ☆ signIn      input 2        |◆|******|◆|\n");
+	printf("          |◆|******|◆|                                     |◆|******|◆|\n");
+	printf("          ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆\n");
+	printf("\n#################################################################################\n");
 	int n;
 	scanf("%d",&n);
 	
@@ -483,25 +502,27 @@ void showMenuE()
 		signUpE();
 	}
 	else if(n==2)
-	{
-		
-		signInE();
-		
-		
+	{		
+		signInE();		
 	}
 	else
 	{
 		printf("Input error！");
 	}
 }
+
 int main()
 {
-	printf("欢迎使用XXX银行\n");
-	printf("Welcome to XXX bank\n");
+    printf("\n#################################################################################\n");
+	printf("\n          ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆\n");
+	printf("          |◆|******|◆|                                     |◆|******|◆|\n");
+	printf("          |◆|******|◆|       ☆ 中文服务    请按 1         |◆|******|◆|\n"); 
+	printf("          |◆|******|◆|       ☆ English     input2         |◆|******|◆|\n");
+	printf("          |◆|******|◆|                                     |◆|******|◆|\n");
+	printf("          ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆\n");
+	printf("\n#################################################################################\n");
 	
 	int language;
-	printf("中文，按1\n");
-	printf("English, input 2\n");
 	scanf("%d",&language);
 	if(language==1)
 	{
